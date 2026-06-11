@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **comprehensive skills library** for Claude AI and Claude Code - reusable, production-ready skill packages that bundle domain expertise, best practices, analysis tools, and strategic frameworks. The repository provides modular skills that teams can download and use directly in their workflows.
 
-**Current Scope:** 330 production-ready skills across 14 domains with ~451 Python automation tools, ~590 reference guides, 50+ agents (cs-* + 7 personas), and 81+ slash commands. **v2.8.0 (complete)** added 2 new top-level domains — **business-operations/** (7 internal-ops skills: orchestrator + process-mapper + vendor-management + capacity-planner + internal-comms + knowledge-ops + procurement-optimizer) and **commercial/** (8 per-deal-economics skills: orchestrator + pricing-strategist + deal-desk + partnerships-architect + channel-economics + commercial-policy + rfp-responder + commercial-forecaster) — with orchestrator skills using `context: fork` for chaining, Matt Pocock docs-anchored "Forcing-question library" in every SKILL.md, plus `/cs:grill-bizops` and `/cs:grill-commercial`. **v2.8.2** adds a productivity-shaped `handoff` skill (sibling to engineering/handoff) inspired by Matt Pocock — first-run setup with configurable save location, redaction linter, SessionStart + SessionEnd hooks, fidelity self-check, `--refresh` flag. **v2.8.1** upgraded the engineering role-skills (senior-fullstack / senior-frontend / senior-backend) with karpathy-coder + Matt Pocock decision engines + per-role forcing questions. v2.7.3 ports `alirezarezvani/aeo-box` — AEO (Answer Engine Optimization) skill into marketing-skill/ + security-guidance PreToolUse hook into engineering/. v2.7.0 added 13 Path-B skills across 3 top-level domains (productivity, marketing, research). v2.6.0 added 4 Matt Pocock-derived productivity skills.
+**Current Scope:** 338 production-ready skills across 16 domains with 533 Python automation tools, 676 reference guides, 51+ agents (cs-* + 7 personas), and 87+ slash commands, distributed as 62 marketplace plugins. **v2.9.0 (complete)** added the **research-ops/** top-level domain — enterprise Research Operations (orchestrator + clinical-research + research-finance + market-research + product-research), the managed counterpart to the academic research/ domain, with `context: fork` orchestration and a Matt Pocock "Forcing-question library" in every SKILL.md plus `/cs:grill-research-ops`. **v2.8.0 (complete)** added 2 new top-level domains — **business-operations/** (7 internal-ops skills: orchestrator + process-mapper + vendor-management + capacity-planner + internal-comms + knowledge-ops + procurement-optimizer) and **commercial/** (8 per-deal-economics skills: orchestrator + pricing-strategist + deal-desk + partnerships-architect + channel-economics + commercial-policy + rfp-responder + commercial-forecaster) — with orchestrator skills using `context: fork` for chaining, Matt Pocock docs-anchored "Forcing-question library" in every SKILL.md, plus `/cs:grill-bizops` and `/cs:grill-commercial`. **v2.8.2** adds a productivity-shaped `handoff` skill (sibling to engineering/handoff) inspired by Matt Pocock — first-run setup with configurable save location, redaction linter, SessionStart + SessionEnd hooks, fidelity self-check, `--refresh` flag. **v2.8.1** upgraded the engineering role-skills (senior-fullstack / senior-frontend / senior-backend) with karpathy-coder + Matt Pocock decision engines + per-role forcing questions. v2.7.3 ports `alirezarezvani/aeo-box` — AEO (Answer Engine Optimization) skill into marketing-skill/ + security-guidance PreToolUse hook into engineering/. v2.7.0 added 13 Path-B skills across 3 top-level domains (productivity, marketing, research). v2.6.0 added 4 Matt Pocock-derived productivity skills.
 
 **Key Distinction**: This is NOT a traditional application. It's a library of skill packages meant to be extracted and deployed by users into their own Claude workflows.
 
@@ -39,6 +39,8 @@ This repository uses **modular documentation**. For domain-specific guidance, se
 | **RA/QM Compliance** | [ra-qm-team/CLAUDE.md](ra-qm-team/CLAUDE.md) | ISO 13485, MDR, FDA, GDPR, ISO 27001 compliance |
 | **Business & Growth** | [business-growth/CLAUDE.md](business-growth/CLAUDE.md) | Customer success, sales engineering, revenue operations |
 | **Finance** | [finance/CLAUDE.md](finance/CLAUDE.md) | Financial analysis, DCF valuation, budgeting, forecasting, SaaS metrics |
+| **Research Operations** | [research-ops/CLAUDE.md](research-ops/CLAUDE.md) | Clinical study design, R&D finance, market research, product research (enterprise counterpart to academic research/) |
+| **Markdown → HTML** | [markdown-html/CLAUDE.md](markdown-html/CLAUDE.md) | Markdown-to-interactive-HTML converter (orchestrator + design-system foundation; md-document/review/slides v2.10.1). Inspired by Shihipar's "Claude Code HTML output" essay |
 | **Standards Library** | [standards/CLAUDE.md](standards/CLAUDE.md) | Communication, quality, git, security standards |
 | **Templates** | [templates/CLAUDE.md](templates/CLAUDE.md) | Template system usage |
 
@@ -49,17 +51,23 @@ This repository uses **modular documentation**. For domain-specific guidance, se
 ```
 claude-code-skills/
 ├── .claude-plugin/            # Plugin registry (marketplace.json)
-├── agents/                    # 27 agents (20 cs-* + 7 personas)
-├── commands/                  # 33 slash commands (changelog, tdd, saas-health, prd, code-to-prd, plugin-audit, sprint-plan, slo-design, etc.)
-├── engineering-team/          # 32 core engineering skills + Playwright Pro + Self-Improving Agent + Security Suite
-├── engineering/               # 44 POWERFUL-tier advanced skills (incl. AgentHub, self-eval, llm-wiki, tc-tracker, ship-gate, slo-architect, write-a-skill, caveman, grill-me, handoff)
-├── product-team/              # 13 product skills (incl. apple-hig-expert) + Python tools
-├── marketing-skill/           # 44 marketing skills (7 pods) + Python tools
-├── c-level-advisor/           # 28 C-level advisory skills (10 roles + orchestration)
+├── agents/                    # 32 standalone agents (cs-* + 7 personas); 51+ cs-* agents repo-wide
+├── commands/                  # slash commands (changelog, tdd, saas-health, prd, code-to-prd, plugin-audit, sprint-plan, slo-design, etc.); 87+ repo-wide
+├── engineering-team/          # 51 core engineering skills + Playwright Pro + Self-Improving Agent + Security Suite
+├── engineering/               # 78 POWERFUL-tier advanced skills (incl. AgentHub, autoresearch-agent, self-eval, llm-wiki, tc-tracker, ship-gate, slo-architect, write-a-skill, caveman, grill-me, handoff)
+├── product-team/              # 17 product skills (incl. apple-hig-expert) + Python tools
+├── marketing-skill/           # 46 marketing skills (8 pods) + Python tools
+├── c-level-advisor/           # 66 C-level advisory skills (full C-suite + founder-mode agents + orchestration)
 ├── project-management/        # 9 PM skills + bundled Atlassian Remote MCP (.mcp.json)
-├── ra-qm-team/                # 14 RA/QM compliance skills
+├── ra-qm-team/                # 18 RA/QM compliance skills
+├── compliance-os/             # 9 compliance-OS skills
 ├── business-growth/           # 5 business & growth skills + Python tools
-├── finance/                   # 3 finance skills + Python tools
+├── business-operations/       # 7 internal-ops skills (orchestrator + 6 sub-skills)
+├── commercial/                # 8 per-deal-economics skills (orchestrator + 7 sub-skills)
+├── finance/                   # 4 finance skills + Python tools
+├── research/                  # 8 academic research skills (orchestrator + 7 specialists)
+├── research-ops/              # 5 research-ops skills (orchestrator + clinical-research + research-finance + market-research + product-research)
+├── markdown-html/             # 2 markdown-to-HTML skills v2.10.0 foundation (orchestrator + design-system); md-document/review/slides land in v2.10.1
 ├── eval-workspace/            # Skill evaluation results (Tessl)
 ├── standards/                 # 5 standards library files
 ├── templates/                 # Reusable templates
@@ -137,7 +145,93 @@ See [standards/git/git-workflow-standards.md](standards/git/git-workflow-standar
 
 ## Current Version
 
-**Version:** v2.8.4 (released — productivity/andreessen v1.0)
+**Version:** v2.10.3 (md-slides — slide-deck converter; completes the markdown-html/ domain)
+
+**v2.10.3 highlights — md-slides (markdown deck → single-file HTML presentation):**
+
+Completes the `markdown-html/` domain at 5 skills. The Tier-3 use case from Shihipar's essay ("Slide Decks"): a markdown deck (slides separated by `---` HR boundaries or `# ` H1 headings, with optional `<!-- notes: ... -->` presenter notes blocks) becomes a single-file HTML presentation that runs in any browser with keyboard nav, presenter mode, and print-to-PDF.
+
+- **`md-slides` skill** — three stdlib tools pipeline together (slide_splitter → presenter_notes_parser → deck_html_renderer):
+  - **`slide_splitter.py`** — splits markdown on `---` HR or `# ` H1 boundaries (or `--boundary auto`: HR wins ≥ 3, else H1 ≥ 5). Extracts the first heading per slide as the title. Hard rule: refuses 1-slide decks (exit 5 — it's a poster) and no-boundary input (exit 6 — route to md-document). Soft-warns slides > 40 source lines (signal-to-noise; renders anyway).
+  - **`presenter_notes_parser.py`** — extracts `<!-- notes: ... -->` blocks (also `speaker-notes:` and `presenter:` aliases) from each slide, attaches as a separate `notes` field, strips from the body so the slide renders cleanly. Tracks `notes_coverage_pct` for the optional `--strict-notes` gate (refuses < 50% coverage).
+  - **`deck_html_renderer.py`** — single-file HTML deck. All slides as `<section class="slide">` elements, one visible at a time (CSS-controlled). Vanilla JS keyboard handlers: `→`/`Space`/`PgDn` advance; `←`/`PgUp` previous; `Home`/`End` first/last; `P` toggles presenter mode; `Esc` exits presenter. URL-hash deep linking (`#3` jumps to slide 3, browser back/forward walks slides). Progress bar at top (3px); slide counter bottom-right. Presenter mode = split view: current slide (60% width) + panel (40% width with clock + speaker notes + next-slide preview). `@media print { section { display: block; page-break-after: always; } }` → `Cmd+P` produces PDF with one slide per page. `prefers-reduced-motion` honored. Reuses `md-document/scripts/markdown_parser.py` for slide-body content rendering. Prism.js is **opt-in via `--syntax`** (off by default — most decks don't need it; keeps the file tiny).
+- **3 reference docs** each citing 5-7 sources: `presentation_ux.md` (Atkinson *Beyond Bullet Points* + Reynolds *Presentation Zen* + Tufte *Cognitive Style of PowerPoint* + NN/g + Weinschenk + Marp/reveal.js/Big convergence + Tom MacWright), `keyboard_nav_patterns.md` (reveal.js / Big / Spectacle keymap + WCAG 2.1.1 + 2.4.3 + MDN KeyboardEvent + NN/g), `single_file_deck_conventions.md` (Big + Marp + Pandoc + reveal.js standalone + WCAG 2.3.3 + `@media print`).
+- **1 template asset** documenting the canonical single-file deck shape.
+- **`/cs:md-slides` slash command** with 6 pre-flight gates + pipeline + output digest.
+- **Empirical footprint**: 5-slide sample deck (3 with presenter notes) → 12.2 KB single-file HTML with keyboard nav + presenter mode + print-to-PDF. By comparison, equivalent Google Slides / Keynote / reveal.js multi-file exports are 200 KB+ of CSS/JS chrome.
+- **Plugin manifest:** `markdown-html-skills` plugin.json `skills` array now lists 5 paths (orchestrator + design-system + md-document + md-review + md-slides). Marketplace counters updated: 64 plugins, 17 domains, **343 skills**, **548 Python tools**, **691 references**, **90+ slash commands**.
+- **Domain status: COMPLETE.** All 5 planned skills shipped across 4 PRs (#780 foundation, #793 md-document, #795 md-review, this PR md-slides). The markdown-html/ domain operationalizes Shihipar's central claim — markdown collapses past 100 lines; HTML restores density, clarity, shareability, and lightweight interaction — across all three layout families (long-form documents, code reviews, slide decks).
+
+---
+
+**Version:** v2.10.2 (md-review — code-review converter for the markdown-html/ domain)
+
+**v2.10.2 highlights — md-review (code-review markdown → 2-col HTML):**
+
+Adds the fourth skill to `markdown-html/`. The Tier-2 use case from Shihipar's essay ("Code Review and PR Writeups"): a markdown PR writeup with ```diff blocks and `> [!BLOCKER]/[!MAJOR]/[!MINOR]/[!NIT]` severity callouts becomes a single-file 2-column HTML review with a top jump-nav, diff on the left, severity-tagged annotation cards on the right, and a mandatory named reviewer footer.
+
+- **`md-review` skill** — three stdlib tools pipeline together (diff_parser → annotation_extractor → review_html_renderer):
+  - **`diff_parser.py`** — scans markdown for ```diff fenced blocks, parses each as a unified diff (`--- a/file`, `+++ b/file`, `@@ -10,7 +10,8 @@`, ` ` / `+` / `-` body lines), assigns per-line numbers on both old (`lo`) and new (`ln`) sides, preserves the per-hunk @@ header context. Supports `--infer-diff` for unfenced/language-less blocks. Stdlib regex + state machine.
+  - **`annotation_extractor.py`** — extracts severity callouts (GFM `> [!BLOCKER]` style) and inline markers (`nit:`, `blocker:`, etc.). Default convention BLOCKER/MAJOR/MINOR/NIT per Google's *Code Review Developer Guide*; overridable via `--severity-convention "critical,important,suggestion,nit"`. Attaches each annotation to the nearest preceding diff block by source-line index; unanchored annotations go to a "general comments" section. Also captures `LGTM`/`👍`/`approved` markers separately as approvals.
+  - **`review_html_renderer.py`** — emits single-file 2-col HTML. Top jump-nav lists every annotation with severity badge + 80-char preview + jump link + counts in heading ("3 BLOCKER · 2 MAJOR · 1 NIT"). Each hunk-row is a CSS grid with diff on the left (per-line numbers, +/− marks, addition/deletion bg tints from `--md-success` / `--md-warn` via `color-mix`) and annotation cards on the right (severity badges that ship color + icon + aria-label + text per WCAG 1.4.1; BLOCKER danger color computed by hue-rotating the design-system accent 120° toward red). Approval bar surfaces when LGTM markers present and no findings. Collapses to stacked on viewports < 900px. Mandatory `--reviewer` (refuses with exit 3 otherwise — research-ops named-owner discipline). Refuses with exit 4 if no hunks present (wrong skill → route to md-document). No Prism CDN (diff coloring conflicts with syntax highlighting).
+- **3 reference docs** each citing 5-7 sources: `diff_rendering_canon.md` (POSIX diff + GitHub/GitLab + difftastic + *SWE at Google* ch. 9), `severity_coding.md` (WCAG 1.4.1 + Google review taxonomy + Don Norman *Design of Everyday Things* + NN/g color UX), `pr_annotation_ux.md` (convergent 2-col UX from GitHub/GitLab/Reviewable/CodeStream + *SWE at Google* + NN/g F-shape).
+- **1 template asset** documenting the canonical 2-col review HTML shape.
+- **`/cs:md-review` slash command** ships the 4 pre-flight gates (under-100-lines, no-onboarding, missing-reviewer, no-hunks) + pipeline + output digest.
+- **Empirical footprint**: 2-hunk sample review with 2 annotations → 11.3 KB single-file HTML.
+- **Plugin manifest:** `markdown-html-skills` plugin.json `skills` array now lists 4 paths. Marketplace counters updated: 64 plugins, 17 domains, **342 skills** (was 341 after v2.10.1).
+
+**Coming in v2.10.3:** `md-slides` — slide splitter + presenter-notes parser + arrow-key/space-bar nav + `@media print` for PDF export. Reuses `md-document`'s renderer scaffolding + `design-system/scripts/config_loader.py`.
+
+---
+
+**Version:** v2.10.1 (md-document — long-form converter for the markdown-html/ domain)
+
+**v2.10.1 highlights — md-document (long-form markdown → single-file HTML):**
+
+Adds the third skill to `markdown-html/` (foundation shipped in v2.10.0). The 90%-case converter: any markdown spec, plan, RFC, report, or explainer becomes a single-file, lightly-interactive HTML document with the user's onboarded brand.
+
+- **`md-document` skill** — three stdlib tools pipeline together (markdown_parser.py → html_renderer.py → interactivity_injector.py):
+  - **`markdown_parser.py`** — CommonMark subset → section AST (headings 1-6 with slug anchors, paragraphs with inline bold/italic/code/links/images, fenced code with language tag, GFM tables with per-column alignment, GFM callouts NOTE/TIP/IMPORTANT/WARNING/CAUTION, blockquotes, ordered + unordered lists, horizontal rules). Stdlib regex + state machine, no `markdown` dependency.
+  - **`html_renderer.py`** — section AST + design-system config → single-file HTML. Inlines the 12 derived CSS custom properties from `~/.config/markdown-html/design-system.json`, applies the user's `design_style` (editorial/technical/minimal/playful) via body-class CSS overrides, renders Google Fonts CDN link + Prism.js theme link per `code_theme`, emits sticky-sidebar / collapsible-top / inline / none TOC per `toc.behavior`. Smoke-tested: changing design_style actually changes max-width, line-height, callout shape, and code font-size — customization is in-use, not decorative.
+  - **`interactivity_injector.py`** — vanilla-JS payload injected before `</body>`: search filter on H2 sections (Esc clears), code-copy buttons (navigator.clipboard with execCommand fallback), smooth-scroll on TOC links, scrollspy via IntersectionObserver (sets `aria-current="location"` on the matching TOC entry). Idempotent (marker check). Feature subset selectable via `--features search,copycode,smoothscroll,scrollspy`.
+- **3 reference docs**, each citing 5-7 sources: `information_density_patterns.md` (Shihipar + Tufte + Wattenberger + Appleton + Ciechanowski + Bret Victor + Jakob Nielsen), `toc_and_nav_ux.md` (NN/g + WCAG 2.2 + ARIA APG + Vitepress/Docusaurus/mdBook convergence + GOV.UK design system + MDN IntersectionObserver), `single_file_html_discipline.md` (Shihipar + Tom MacWright's Big + Google Fonts API + Prism.js + Anil Dash's *The Web We Lost*).
+- **1 template asset** (`md_document_template.html`) documenting the canonical output shape for renderer reference.
+- **`/cs:md-document` slash command** ships the pre-flight gates + 3-tool pipeline + output digest.
+- **Empirical footprint**: ~150-line markdown → 11 KB HTML / 15 KB with JS; ~470-line markdown → 17 KB / 23 KB with JS. By comparison, equivalent Notion/Confluence/GitBook exports are 200 KB+ of CSS chrome.
+- **Plugin manifest:** `markdown-html-skills` plugin.json `skills` array now lists 3 paths (orchestrator + design-system + md-document). Marketplace + root CLAUDE.md counters updated: 64 plugins, 17 domains, **341 skills** (was 338 before v2.10.0). Cleans up stale 338/63 counters left by v2.10.0 PR #780.
+
+**Coming in v2.10.2:** `md-review` (2-col diff + severity-tagged margin annotations + jump-nav) and `md-slides` (arrow-key nav + presenter mode + print-to-PDF). Both will reuse `md-document`'s renderer scaffolding and `design-system/scripts/config_loader.py`.
+
+---
+
+**Version:** v2.10.0 (foundation released — `markdown-html/` domain: markdown-to-interactive-HTML converter)
+
+**v2.10.0 foundation highlights — markdown-html/ domain (new top-level domain):**
+
+New `markdown-html/` top-level domain — operationalizes Thariq Shihipar's central claim from his Medium essay *Claude Code HTML output: Why Markdown Lost and How to Switch* (2026): **markdown collapses past ~100 lines for agent-generated artifacts; HTML restores information density, visual clarity, shareability, and lightweight interaction.** Foundation PR (v2.10.0) ships 2 of 5 planned skills; converters land in v2.10.1.
+
+- **`markdown-html-orchestrator`** (`context: fork`) — deterministic doctype classifier scores filename hints (2 points each) + content signals (1 point each) across three lanes (DOCUMENT / REVIEW / SLIDES). Silent-routes when winner ≥ 3 AND (runner-up = 0 OR winner ≥ 2× runner-up); below threshold asks one question with a recommended answer. Three pre-flight refusals: input < 100 lines (Shihipar threshold), design-system not onboarded, output dir unwritable. 3 stdlib tools: `doctype_classifier.py`, `route_explainer.py` (the "never silently chain" enforcer; also gates on design-system status), `output_path_resolver.py` (kebab slug + collision suffix). Canon: Shihipar; Tufte; Bret Victor; Maggie Appleton; Bartosz Ciechanowski; Amelia Wattenberger.
+- **`design-system`** — one-time onboarding wizard (10 questions: `default_output_dir`, brand primary/accent HEX, heading + body Google Fonts from 12 safe defaults, design style `editorial/technical/minimal/playful`, syntax theme `light/dark/auto`, TOC behavior `sticky-sidebar/collapsible-top/inline/none`, optional company name + logo URL). WCAG-AA-validated 12-token CSS custom-property palette derived in HSL space — primary's luminance branch decides whether bg = primary (dark-mode docs) or bg = near-neutral light (vibrant primary as accent); link contrast iteratively walked to 4.5:1. 3 stdlib tools: `onboard.py` (interactive + `--defaults/--set/--show/--reset/--scope`), `config_loader.py` (project > global > defaults, deep merge, `MARKDOWN_HTML_NO_CONFIG=1` bypass), `brand_palette_validator.py` (WCAG 2.2 §1.4.3/§1.4.11 + HSL derivation, 12 tokens: `--md-bg/surface/border/text/text-muted/accent/accent-soft/code-bg/link/link-hover/success/warn`). Refuses to save if body-text or link contrast fails AA 4.5:1, or if output dir is unwritable. Canon: WCAG 2.2; Ellen Lupton *Thinking with Type*; Adobe Spectrum; Sara Soueidan accessible color tokens; Material Design 3.
+- **`cs-markdown-html-orchestrator` agent + 3 slash commands:** `/cs:markdown-html <path>.md` (router), `/cs:grill-markdown-html <path>.md` (Matt-Pocock 5-question grill, one per turn with recommended answer + canon citation), `/cs:design-system` (surfaces onboarding). Forcing-question library in every SKILL.md.
+- **Hard rules:** refuse < 100 lines (Shihipar); refuse without onboarding; refuse unwritable save dir; single-file HTML only (Google Fonts + Prism.js CDN are the only permitted externals; no JS framework runtimes); never silently chain converters; customization must change behavior (not decoration).
+- **Coming in v2.10.1:** `md-document` (sticky TOC + collapsibles + search + code-copy + scrollspy), `md-review` (2-col diff + severity-tagged margin annotations + jump-nav), `md-slides` (arrow-key nav + presenter mode + print-to-PDF). All three import `design-system/scripts/config_loader.py` for shared tokens.
+- **6 stdlib-only Python tools** (3 per skill, all pass `--help` + `--sample`), **6 reference docs** each citing 5-7 authoritative sources, **1 JSON schema asset** for the customization config. Distinct from Anthropic's official Playground plugin (interactive prompt-tuning controls with sliders/knobs/prompt-copy-back) and from `marketing/landing/` (landing-page generator from scratch).
+- **Marketplace + Codex registry:** 63 → 64 plugins; 16 → 17 domains; new `documentation` category.
+
+---
+
+**Version:** v2.9.0 (research-ops/ domain: enterprise Research Operations)
+
+**v2.9.0 highlights — research-ops/ domain (new top-level domain):**
+
+New `research-ops/` top-level domain — the enterprise / cross-functional counterpart to the academic `research/` domain (which finds literature, grants, patents). Single domain plugin (commercial/ + business-operations/ pattern): orchestrator (`context: fork`) + 4 managed sub-skills.
+
+- **`clinical-research`** — prospective clinical STUDY design (not regulatory submission, which stays in `ra-qm-team`). 3 stdlib tools: `sample_size_estimator.py` (closed-form power/n for means/proportions/survival with a built-in z-table, dropout inflation, "ESTIMATE — confirm with a biostatistician" banner), `endpoint_selector.py` (5-dimension scoring → PRIMARY/KEY-SECONDARY/EXPLORATORY, penalizes unvalidated surrogates), `phase_gate_scorer.py` (feasibility 0-100 → GO/GO-WITH-CONDITIONS/REDESIGN/NO-GO + named owner chain). Canon: ICH E8/E9/E9(R1), CONSORT, SPIRIT, FDA Multiple Endpoints, Cohen, Schoenfeld.
+- **`research-finance`** — internal R&D PROGRAM/portfolio finance (not corporate close `finance/`, not grant discovery `research/grants`). 3 tools: `program_budget_planner.py` (multi-period budget + F&A/MTDC split + assumptions block), `burn_runway_tracker.py` (trailing burn, runway, milestone-vs-cash), `capex_vs_opex_router.py` (IAS 38 / ASC 730 routing → CAPITALIZE-CANDIDATE/EXPENSE/FINANCE-OWNER-REVIEW, never auto-decides). Canon: IAS 38, ASC 730/985-20, 2 CFR 200, Cooper stage-gate, rNPV.
+- **`market-research`** — upstream sizing/survey/segmentation methodology (not campaign analytics `marketing-skill`). 3 tools: `market_sizer.py` (TAM/SAM/SOM both top-down AND bottoms-up + triangulation flag, never a single number), `sample_size_planner.py` (survey n + FPC + per-segment minima), `segmentation_scorer.py` (Kotler 5-criteria + substantiality/accessibility gate). Canon: Cochran, Dillman, Groves, Kotler, Bessemer/a16z sizing.
+- **`product-research`** — product/user research method + insight-repository discipline (not persona/journey/live-A-B `product-team`). 3 tools: `study_designer.py` (goal×stage → method + plan skeleton), `saturation_planner.py` (Nielsen-5 / Guest-12 with explicit confidence), `insight_synthesizer.py` (clusters coded observations, flags single-source anecdotes — never promotes them). Canon: Portigal, JTBD, Rohrer (NN/g), Nielsen, Guest et al., ResearchOps/Polaris.
+- **Hard rules:** clinical outputs are estimates + named clinical owner (never fact); finance surfaces assumptions and routes treatment to a named finance owner (never auto-decides); market sizes show method + assumptions (never a single number); product insights require recurrence across independent participants. `cs-research-ops-orchestrator` agent + `/cs:research-ops` router + `/cs:grill-research-ops` (Matt docs-anchored grilling) + 4 per-skill commands.
+- **Onboarding + customization + autoresearch (per sub-skill, isolated):** each sub-skill ships `onboard.py` (its own question set), `config_loader.py` (a customization config consumed by every tool, project>global>defaults precedence, `RESEARCH_OPS_NO_CONFIG=1` bypass), and `ar_evaluator.py` — an opt-in, locked-ground-truth bridge to `engineering/autoresearch-agent` (loop edits the skill's input file; metrics: clinical `feasibility_composite`↑, finance `runway_months`↑, market `tam_divergence`↓, product `validated_insights`↑). 24 stdlib tools total (12 analysis + 12 onboarding/customization/autoresearch; all pass `--help`/`--sample`), 12 reference docs (5-7 sources each). Marketplace 61 → 62 plugins; domains 15 → 16.
 
 **v2.8.3** shipped the Mistral Vibe cross-platform sync (`scripts/sync-vibe-skills.py`, `~/.vibe/skills/claude-skills/`) — bringing first-class tool support to 13 coding agents.
 
@@ -416,6 +510,6 @@ This repository publishes skills to **ClawHub** (clawhub.com) as the distributio
 
 ---
 
-**Last Updated:** May 24, 2026
-**Version:** v2.8.4
-**Status:** 330 skills deployed across 14 domains, 61 marketplace plugins, docs site live
+**Last Updated:** May 27, 2026
+**Version:** v2.9.0
+**Status:** 338 skills deployed across 16 domains, 62 marketplace plugins, docs site live
