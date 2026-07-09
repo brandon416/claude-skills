@@ -3,7 +3,7 @@
   "name": "claude-code-skills",
   "description": "Production-ready skill packages for AI agents - Marketing, Engineering, Product, C-Level, PM, and RA/QM",
   "repository": "https://github.com/alirezarezvani/claude-skills",
-  "total_skills": 352,
+  "total_skills": 355,
   "skills": [
     {
       "name": "business-growth-skills",
@@ -87,13 +87,13 @@
       "name": "arquiteto-de-empresa",
       "source": "../../c-level-advisor/skills/arquiteto-de-empresa",
       "category": "c-level",
-      "description": "Arquiteto de Empresa: constr\u00f3i um neg\u00f3cio do zero como bundle OKF (Open Knowledge Format) \u2014 uma \u00e1rvore de arquivos .md version\u00e1veis com frontmatter type, links formando grafo, e index.md/log.md reservados, leg\u00edvel por humanos e por agentes. Conduz o fundador por uma entrevista de 12 fases (funda\u00e7\u00e3o, estrat\u00e9gia, mercado, financeiro, comercial, marketing, produto, opera\u00e7\u00f5es, tech, pessoas, jur\u00eddico, governan\u00e7a), uma fase por vez, poucas perguntas por bloco, e gera os conceitos como markdown conformante. Acione quando o usu\u00e1rio quiser criar, estruturar ou documentar uma empresa inteira em pastas e arquivos .md; quando mencionar montar minha empresa do zero, empresa como c\u00f3digo, base de conhecimento da empresa para IA ler, wiki da empresa para agentes, OKF, ou bundle de conhecimento. Em portugu\u00eas do Brasil."
+      "description": "Company Architect: builds a business from scratch as an OKF (Open Knowledge Format) bundle \u2014 a tree of version-controllable .md files with frontmatter type, links forming a graph, and reserved index.md/log.md, readable by humans and agents. Guides the founder through a 12-phase interview (foundation, strategy, market, financial, sales, marketing, product, operations, tech, people, legal, governance), one phase at a time, few questions per block, and generates the concepts as conformant markdown. Trigger when the user wants to create, structure, or document an entire company in folders and .md files; when they mention build my company from scratch, company as code, company knowledge base for AI to read, company wiki for agents, OKF, or knowledge bundle. In English."
     },
     {
       "name": "arquiteto-de-empresa",
       "source": "../../c-level-advisor/arquiteto-de-empresa/skills/arquiteto-de-empresa",
       "category": "c-level",
-      "description": "Arquiteto de Empresa: constr\u00f3i um neg\u00f3cio do zero como bundle OKF (Open Knowledge Format) \u2014 uma \u00e1rvore de arquivos .md version\u00e1veis com frontmatter type, links formando grafo, e index.md/log.md reservados, leg\u00edvel por humanos e por agentes. Conduz o fundador por uma entrevista de 12 fases (funda\u00e7\u00e3o, estrat\u00e9gia, mercado, financeiro, comercial, marketing, produto, opera\u00e7\u00f5es, tech, pessoas, jur\u00eddico, governan\u00e7a), uma fase por vez, poucas perguntas por bloco, e gera os conceitos como markdown conformante. Acione quando o usu\u00e1rio quiser criar, estruturar ou documentar uma empresa inteira em pastas e arquivos .md; quando mencionar montar minha empresa do zero, empresa como c\u00f3digo, base de conhecimento da empresa para IA ler, wiki da empresa para agentes, OKF, ou bundle de conhecimento. Em portugu\u00eas do Brasil."
+      "description": "Company Architect: builds a business from scratch as an OKF (Open Knowledge Format) bundle \u2014 a tree of version-controllable .md files with frontmatter type, links forming a graph, and reserved index.md/log.md, readable by humans and agents. Guides the founder through a 12-phase interview (foundation, strategy, market, financial, sales, marketing, product, operations, tech, people, legal, governance), one phase at a time, few questions per block, and generates the concepts as conformant markdown. Trigger when the user wants to create, structure, or document an entire company in folders and .md files; when they mention build my company from scratch, company as code, company knowledge base for AI to read, company wiki for agents, OKF, or knowledge bundle. In English."
     },
     {
       "name": "board-deck-builder",
@@ -936,6 +936,12 @@
       "description": "Use when the user asks to design a multi-agent system, pick an orchestration pattern (supervisor/swarm/pipeline), generate tool schemas for agents, or evaluate agent execution logs for cost, latency, and failure bottlenecks. Examples: 'design an agent architecture for research automation', 'generate Anthropic tool schemas from these tool descriptions', 'analyze these agent run logs for bottlenecks'. NOT for Claude Code workflow files (use workflow-builder) or single-agent prompt design (use agent-workflow-designer)."
     },
     {
+      "name": "agent-harness",
+      "source": "../../engineering/agent-harness/skills/agent-harness",
+      "category": "engineering-advanced",
+      "description": "Turn any domain folder of skills into a bounded agentic loop: compile a goal into a verifiable task plan, execute tasks with the domain's own tools, verify every task with machine-run checks, retry with caps, escalate to a human when budgets exhaust, and refuse to close until everything is verified or explicitly waived. Use when you want an agent or subagent to pick up a goal and drive it to a verified close across one of this repo's 18 domains ('run this goal through the engineering harness', 'set up an agentic loop for marketing work', 'make the finance domain self-verifying'). NOT for authoring Claude Code Workflow-tool .js scripts (workflow-builder), N-agent tournaments on one task (agenthub), single-file metric optimization (autoresearch-agent), or discovering published loop recipes (loop-library)."
+    },
+    {
       "name": "agent-workflow-designer",
       "source": "../../engineering/skills/agent-workflow-designer",
       "category": "engineering-advanced",
@@ -1212,6 +1218,12 @@
       "description": "Zero-downtime migration planning, compatibility validation, and rollback strategy generation. Tools for system, database, and infrastructure migrations with minimal business impact. Use when planning a database migration, infrastructure cutover, system replacement, or any high-risk transition that needs explicit rollback paths."
     },
     {
+      "name": "minimalist",
+      "source": "../../engineering/minimalist",
+      "category": "engineering-advanced",
+      "description": "Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native platform, existing deps \u2014 before writing any new code."
+    },
+    {
       "name": "monorepo-navigator",
       "source": "../../engineering/skills/monorepo-navigator",
       "category": "engineering-advanced",
@@ -1360,6 +1372,12 @@
       "source": "../../engineering/autoresearch-agent/skills/status",
       "category": "engineering-advanced",
       "description": "Show experiment dashboard with results, active loops, and progress. Use when the user runs /ar:status or asks how an autoresearch experiment is going."
+    },
+    {
+      "name": "strict-api",
+      "source": "../../engineering/strict-api",
+      "category": "engineering-advanced",
+      "description": "Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in the user's installed version."
     },
     {
       "name": "tc-tracker",
@@ -1779,7 +1797,7 @@
       "name": "product-skills",
       "source": "../../product-team/skills/product-skills",
       "category": "product",
-      "description": "Router/index for the 12 product skills bundled in this plugin (RICE prioritization, OKRs, UX research, design tokens, competitive teardown, analytics, experiments, discovery, roadmaps, spec-to-repo, landing pages, SaaS scaffolding). Use when a product request doesn't obviously match one skill and you need to pick the right one (e.g., 'help me prioritize features', 'plan a product experiment')."
+      "description": "Use when coordinating product work across the 12 bundled product sub-skills (RICE, OKRs, UX research, design tokens, competitive teardown, analytics, experiments, discovery, roadmaps, spec-to-repo, landing pages, SaaS scaffolding) or the 4 standalone product-team plugins (user stories, Apple HIG, code-to-PRD, research summarizer). Triggers on 'help me prioritize', 'plan a product experiment', 'we ship features nobody uses', 'run the discovery loop', 'is our OST sound'. Forks context to route to one sub-skill via a deterministic signal router and returns a digest; can also drive a continuous-discovery loop (Torres cadence tracker + OST linter as machine gates) or a full goal\u2192plan\u2192execute\u2192verify\u2192close run through the repo-wide agent-harness. Distinct from project-management (how to deliver vs what to build), marketing/landing (from-scratch pages), and engineering/agent-harness (the generic loop engine this orchestrator plugs into)."
     },
     {
       "name": "product-strategist",
@@ -1899,7 +1917,7 @@
       "name": "pm-skills",
       "source": "../../project-management/skills/pm-skills",
       "category": "project-management",
-      "description": "Router/index for the 8 project-management skills bundled in this plugin (senior PM quant toolkit, scrum master, Jira/JQL, Confluence, Atlassian admin, Atlassian templates, meeting analyzer, team communications). Use when a PM request doesn't obviously match one skill and you need to pick the right one (e.g., 'our sprints feel off', 'audit our Jira permissions'). Bundles an Atlassian Remote MCP config (.mcp.json) for live Jira/Confluence access."
+      "description": "Use when coordinating project-delivery work across the 8 project-management sub-skills \u2014 sprint/velocity analytics, portfolio health, Jira/JQL, Confluence, Atlassian admin, templates, meeting analysis, team comms. Triggers on 'our sprints feel off', 'project health report', 'audit our Jira permissions', 'when will it be done', 'run the delivery loop'. Forks context to route to one sub-skill via a deterministic signal router and returns a digest; can also drive a full goal\u2192plan\u2192execute\u2192verify\u2192close delivery loop through the repo-wide agent-harness with Jira MCP data bridged into the domain's analytics tools. Distinct from product-team (what to build vs how to deliver it), business-operations (internal ops), and engineering/agent-harness (the generic loop engine this orchestrator plugs into)."
     },
     {
       "name": "scrum-master",
@@ -2155,7 +2173,7 @@
       "description": "Software engineering and technical skills"
     },
     "engineering-advanced": {
-      "count": 79,
+      "count": 82,
       "source": "../../engineering",
       "description": "Advanced engineering skills - agents, RAG, MCP, CI/CD, databases, observability"
     },
