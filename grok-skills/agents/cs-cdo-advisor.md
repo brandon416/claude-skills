@@ -152,8 +152,8 @@ echo "Kill criteria + checkpoint dates in each output."
 ## References
 
 - Skill: [../../c-level-advisor/skills/chief-data-officer-advisor/SKILL.md](../../c-level-advisor/skills/chief-data-officer-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
-- Sibling command: [`/cs:cdo-review`](../skills/cdo-review/SKILL.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
+- Sibling command: [`/cs:cdo-review`](../../c-level-agents/skills/cdo-review/SKILL.md)
 
 ---
 

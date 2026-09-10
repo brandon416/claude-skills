@@ -120,7 +120,7 @@ echo "Artifacts ready in /tmp/. Feed into /cs:boardroom brief."
 ## References
 
 - Skill: [../../c-level-advisor/skills/cfo-advisor/SKILL.md](../../c-level-advisor/skills/cfo-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 - Domain guide: [../../CLAUDE.md](../../CLAUDE.md)
 
 ---

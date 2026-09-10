@@ -116,7 +116,7 @@ echo "IR runbook check: ../../c-level-advisor/skills/ciso-advisor/references/inc
 ## References
 
 - Skill: [../../c-level-advisor/skills/ciso-advisor/SKILL.md](../../c-level-advisor/skills/ciso-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

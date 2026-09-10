@@ -156,8 +156,8 @@ echo "  ☐ /cs:freeze applied if irreversible (term sheet, M&A LOI, employment 
 ## References
 
 - Skill: [../../c-level-advisor/skills/general-counsel-advisor/SKILL.md](../../c-level-advisor/skills/general-counsel-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
-- Sibling command: [`/cs:gc-review`](../skills/gc-review/SKILL.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
+- Sibling command: [`/cs:gc-review`](../../c-level-agents/skills/gc-review/SKILL.md)
 
 ---
 

@@ -115,7 +115,7 @@ echo "📚 Reference: positioning + playbooks"
 ## References
 
 - Skill: [../../c-level-advisor/skills/cmo-advisor/SKILL.md](../../c-level-advisor/skills/cmo-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

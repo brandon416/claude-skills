@@ -123,7 +123,7 @@ echo "Decision logged to decisions/decisions/raw/$(date +%Y-%m-%d)-$RANDOM.md"
 ## References
 
 - Skill: [../../c-level-advisor/skills/chief-of-staff/SKILL.md](../../c-level-advisor/skills/chief-of-staff/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 - Decision-logger: [../../c-level-advisor/skills/decision-logger/SKILL.md](../../c-level-advisor/skills/decision-logger/SKILL.md)
 
 ---

@@ -116,7 +116,7 @@ echo "Reference: ../../c-level-advisor/skills/coo-advisor/references/ops_cadence
 ## References
 
 - Skill: [../../c-level-advisor/skills/coo-advisor/SKILL.md](../../c-level-advisor/skills/coo-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

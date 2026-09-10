@@ -152,8 +152,8 @@ python ../../c-level-advisor/skills/vpe-advisor/scripts/eng_team_structure_desig
 ## References
 
 - Skill: [../../c-level-advisor/skills/vpe-advisor/SKILL.md](../../c-level-advisor/skills/vpe-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
-- Sibling command: [`/cs:vpe-review`](../skills/vpe-review/SKILL.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
+- Sibling command: [`/cs:vpe-review`](../../c-level-agents/skills/vpe-review/SKILL.md)
 
 ---
 

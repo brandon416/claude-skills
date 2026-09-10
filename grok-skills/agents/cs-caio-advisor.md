@@ -165,8 +165,8 @@ python ../../c-level-advisor/skills/chief-ai-officer-advisor/scripts/ai_cost_eco
 ## References
 
 - Skill: [../../c-level-advisor/skills/chief-ai-officer-advisor/SKILL.md](../../c-level-advisor/skills/chief-ai-officer-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
-- Sibling command: [`/cs:caio-review`](../skills/caio-review/SKILL.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
+- Sibling command: [`/cs:caio-review`](../../c-level-agents/skills/caio-review/SKILL.md)
 
 ---
 

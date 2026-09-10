@@ -115,7 +115,7 @@ echo "Pair with RICE: python ../../product-team/skills/product-manager-toolkit/s
 ## References
 
 - Skill: [../../c-level-advisor/skills/cpo-advisor/SKILL.md](../../c-level-advisor/skills/cpo-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

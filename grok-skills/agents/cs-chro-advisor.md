@@ -111,7 +111,7 @@ echo "Ladder reference: ../../c-level-advisor/skills/chro-advisor/references/org
 ## References
 
 - Skill: [../../c-level-advisor/skills/chro-advisor/SKILL.md](../../c-level-advisor/skills/chro-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

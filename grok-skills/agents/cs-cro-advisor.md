@@ -112,7 +112,7 @@ echo "Pipeline coverage and retention dashboard ready."
 ## References
 
 - Skill: [../../c-level-advisor/skills/cro-advisor/SKILL.md](../../c-level-advisor/skills/cro-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
 
 ---
 

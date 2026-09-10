@@ -163,8 +163,8 @@ python ../../c-level-advisor/skills/chief-customer-officer-advisor/scripts/cs_co
 ## References
 
 - Skill: [../../c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md](../../c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md)
-- Voice spec: [../references/persona-voices.md](../references/persona-voices.md)
-- Sibling command: [`/cs:cco-review`](../skills/cco-review/SKILL.md)
+- Voice spec: [../../c-level-agents/references/persona-voices.md](../../c-level-agents/references/persona-voices.md)
+- Sibling command: [`/cs:cco-review`](../../c-level-agents/skills/cco-review/SKILL.md)
 
 ---
 
