@@ -1,0 +1,14 @@
+{
+  "name": "c-level-agents",
+  "displayName": "C-Level Agents",
+  "description": "Founder-mode executive team for Grok: 13 cs-* C-suite agents plus 21 /cs:* slash commands (founder-mode auto-router, boardroom, office-hours, brief, decide, execute, freeze, post-mortem, per-role reviews). Voices are runtime-agnostic; Grok-cleaned copies live in grok-skills/agents/.",
+  "version": "2.9.0",
+  "author": {
+    "name": "Alireza Rezvani",
+    "url": "https://alirezarezvani.com"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/c-level-agents",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": ["founder-mode", "boardroom", "agents", "cs-cfo-advisor"]
+}

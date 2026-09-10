@@ -1,0 +1,23 @@
+{
+  "name": "c-suite",
+  "displayName": "C-Suite Advisor",
+  "description": "Grok-native C-suite plugin: /orchestrate routes any founder question to the right chair; /ceo-assistant holds strategy, capital, board, and time. Wraps 34 C-level advisor skills, 13 persona agents, BizOps, growth, and 7 operator personas. Works on Grok, Codex, Cursor, Hermes, and ChatGPT.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Brandon Pascual",
+    "url": "https://github.com/brandon416"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/grok-skills",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "grok",
+    "ceo",
+    "c-suite",
+    "orchestrate",
+    "boardroom",
+    "advisor",
+    "founder-mode",
+    "bizops"
+  ]
+}
