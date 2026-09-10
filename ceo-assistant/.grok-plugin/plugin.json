@@ -1,0 +1,30 @@
+{
+  "name": "ceo-assistant",
+  "version": "1.0.0",
+  "description": "Portable executive decision and orchestration skills for founders and operators.",
+  "skills": "skills/ceo-assistant/SKILL.md",
+  "instructions": "AGENTS.md",
+  "metadata": {
+    "source": "brandon416/claude-skills",
+    "source_areas": [
+      "c-level-advisor",
+      "c-level-agents",
+      "business-operations",
+      "agents/personas",
+      "business-growth"
+    ],
+    "adapted_for": [
+      "grok",
+      "chatgpt",
+      "codex",
+      "hermes",
+      "cursor",
+      "claude"
+    ],
+    "orchestration": "capability-aware",
+    "slash_commands": [
+      "/ceo-assistant",
+      "/orchestrate"
+    ]
+  }
+}
