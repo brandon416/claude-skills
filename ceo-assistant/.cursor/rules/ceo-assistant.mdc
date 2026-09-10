@@ -1,0 +1,5 @@
+---
+description: Route executive work through the portable CEO Assistant skill.
+alwaysApply: false
+---
+Use `skills/ceo-assistant/SKILL.md` for founder, executive, business-operations, growth, or cross-functional decision work. Use `skills/executive-orchestrator/SKILL.md` when several independent lenses are needed. Treat these as canonical. Never claim subagent execution unless Cursor exposes separate worker contexts and observable routing evidence.
