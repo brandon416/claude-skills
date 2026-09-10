@@ -1,0 +1,52 @@
+{
+  "name": "c-suite-grok",
+  "description": "Grok-native marketplace for the C-level advisor, C-level agents, BizOps, growth, and overlay packs in brandon416/claude-skills. Same documents load in Codex, Cursor, Hermes, and ChatGPT.",
+  "owner": {
+    "name": "Brandon Pascual",
+    "url": "https://github.com/brandon416"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "plugins": [
+    {
+      "name": "c-suite",
+      "source": "./grok-skills",
+      "description": "Overlay: /orchestrate + /ceo-assistant. Runtime-agnostic router and CEO seat. Install this first.",
+      "category": "productivity",
+      "keywords": ["orchestrate", "ceo-assistant", "c-suite", "grok"],
+      "homepage": "https://github.com/brandon416/claude-skills/tree/main/grok-skills"
+    },
+    {
+      "name": "c-level-skills",
+      "source": "./c-level-advisor",
+      "description": "34 C-level advisory skills: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO, GC, CDO, CAIO, CCO, VPE, plus board, culture, and strategy playbooks.",
+      "category": "productivity",
+      "keywords": ["ceo", "cfo", "cto", "board", "strategy"],
+      "homepage": "https://github.com/brandon416/claude-skills/tree/main/c-level-advisor"
+    },
+    {
+      "name": "c-level-agents",
+      "source": "./c-level-agents",
+      "description": "Founder-mode executive team: 13 cs-* persona agents and 21 /cs:* slash commands (boardroom, office-hours, brief, decide, execute).",
+      "category": "productivity",
+      "keywords": ["founder-mode", "boardroom", "agents"],
+      "homepage": "https://github.com/brandon416/claude-skills/tree/main/c-level-agents"
+    },
+    {
+      "name": "business-operations-skills",
+      "source": "./business-operations",
+      "description": "Internal BizOps: process-mapper, vendor-management, capacity-planner, internal-comms, knowledge-ops, procurement-optimizer, plus orchestrator.",
+      "category": "productivity",
+      "keywords": ["bizops", "process", "vendor", "capacity"],
+      "homepage": "https://github.com/brandon416/claude-skills/tree/main/business-operations"
+    },
+    {
+      "name": "business-growth-skills",
+      "source": "./business-growth",
+      "description": "External revenue: customer success, sales engineer, revenue operations, contract and proposal writer.",
+      "category": "productivity",
+      "keywords": ["revops", "sales", "customer-success"],
+      "homepage": "https://github.com/brandon416/claude-skills/tree/main/business-growth"
+    }
+  ]
+}

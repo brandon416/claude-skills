@@ -1,0 +1,14 @@
+{
+  "name": "c-suite",
+  "displayName": "C-Suite Advisor",
+  "description": "Grok-native overlay: /orchestrate (chief-of-staff router) and /ceo-assistant (CEO seat, capital, board, time). Runtime-agnostic — same files work in Codex, Cursor, Hermes, and ChatGPT. Wraps the C-level advisor, agents, BizOps, growth, and persona packs in this repo.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Brandon Pascual",
+    "url": "https://github.com/brandon416"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/grok-skills",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": ["grok", "orchestrate", "ceo-assistant", "c-suite", "boardroom"]
+}

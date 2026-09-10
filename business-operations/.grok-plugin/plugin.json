@@ -1,0 +1,14 @@
+{
+  "name": "business-operations-skills",
+  "displayName": "Business Operations",
+  "description": "Internal BizOps for Grok and other agents: process-mapper, vendor-management, capacity-planner, internal-comms, knowledge-ops, procurement-optimizer, plus a domain orchestrator. Distinct from business-growth (external sales) and c-level-advisor (strategy).",
+  "version": "2.9.0",
+  "author": {
+    "name": "Alireza Rezvani",
+    "url": "https://alirezarezvani.com"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/business-operations",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": ["bizops", "process", "vendor", "capacity", "procurement"]
+}

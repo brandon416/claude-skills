@@ -1,0 +1,14 @@
+{
+  "name": "c-level-skills",
+  "displayName": "C-Level Advisor",
+  "description": "34 C-level advisory skills for Grok, Codex, Cursor, Hermes, and ChatGPT: CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO, General Counsel, CDO, CAIO, CCO, VPE, plus board meetings, decision logger, culture, M&A, and strategy playbooks. Pair with the c-suite overlay (/orchestrate, /ceo-assistant) and the c-level-agents pack.",
+  "version": "2.9.0",
+  "author": {
+    "name": "Alireza Rezvani",
+    "url": "https://alirezarezvani.com"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/c-level-advisor",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": ["ceo", "cfo", "cto", "board", "strategy", "c-suite"]
+}
