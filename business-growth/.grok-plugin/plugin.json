@@ -1,0 +1,14 @@
+{
+  "name": "business-growth-skills",
+  "displayName": "Business Growth",
+  "description": "External revenue skills for Grok and other agents: customer success manager, sales engineer, revenue operations, contract and proposal writer, plus a domain router.",
+  "version": "2.9.0",
+  "author": {
+    "name": "Alireza Rezvani",
+    "url": "https://alirezarezvani.com"
+  },
+  "homepage": "https://github.com/brandon416/claude-skills/tree/main/business-growth",
+  "repository": "https://github.com/brandon416/claude-skills",
+  "license": "MIT",
+  "keywords": ["revops", "customer-success", "sales-engineer", "proposals"]
+}
